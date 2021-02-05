@@ -1,0 +1,26 @@
+name: Deploy
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+      - name: Install dependencies
+        run: npm i
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: |
+          mkdir ~/.ssh
+          echo ${{ secrets.DEPLOY_KNOWN_HOSTS }} > ~/.ssh/known_hosts
+          echo '${{ secrets.DEPLOY_OPENSSH_PRIVATE_KEY }}' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          scp -r public github@74.207.236.245:~
+          ssh github@74.207.236.245 'rm -rf /var/www/jaredcleghorn.com/* && mv public/* /var/www/jaredcleghorn.com && rm -r public'
