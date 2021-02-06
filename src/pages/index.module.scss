@@ -1,0 +1,56 @@
+$gray: #333;
+$header-height: 60px;
+
+#header {
+	align-items: center;
+	background-color: black;
+	display: flex;
+	font-family: 'Share Tech Mono';
+	height: $header-height;
+	padding-left: 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+
+	span {
+		color: #f44;
+	}
+}
+
+#main {
+	background-color: $gray;
+	font-family: Raleway;
+	line-height: 1.5;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: $header-height;
+	padding: 20px 30px;
+
+	article {
+		background-color: black;
+		padding: 20px 30px;
+
+		h3, p, pre {
+			margin-bottom: 20px;
+		}
+
+		a {
+			color: #88f;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		pre {
+			background-color: $gray;
+		}
+
+		ul {
+			margin-left: 30px;
+			overflow-wrap: break-word;
+		}
+	}
+}
