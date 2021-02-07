@@ -20,7 +20,6 @@ $header-height: 60px;
 
 #main {
 	background-color: $gray;
-	font-family: Raleway;
 	line-height: 1.5;
 	margin-left: auto;
 	margin-right: auto;
@@ -53,4 +52,13 @@ $header-height: 60px;
 			overflow-wrap: break-word;
 		}
 	}
+}
+
+#footer {
+	$padding: 10px;
+
+	font-size: small;
+	padding-top: $padding;
+	padding-bottom: $padding;
+	text-align: center;
 }

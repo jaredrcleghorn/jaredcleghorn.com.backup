@@ -17,6 +17,9 @@ export default function Home({ data }) {
           </article>
         ))}
       </main>
+      <p id={styles.footer}>
+        Copyright &copy; 2021 Jared Cleghorn. All rights reserved.
+      </p>
     </>
   )
 }
