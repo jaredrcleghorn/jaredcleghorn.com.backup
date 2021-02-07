@@ -26,10 +26,20 @@ $header-height: 60px;
 	margin-top: $header-height;
 	padding: 20px 30px;
 
-	article {
+	section, article {
 		background-color: black;
 		padding: 20px 30px;
+	}
 
+	section {
+		margin-bottom: 20px;
+
+		h2 {
+			margin-bottom: 10px;
+		}
+	}
+
+	article {
 		h3, p, pre {
 			margin-bottom: 20px;
 		}
